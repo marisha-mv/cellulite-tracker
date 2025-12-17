@@ -1,6 +1,6 @@
 import { prisma } from '../server';
 import { WorkoutSessionData } from '../types';
-import { startOfDay, startOfWeek, endOfWeek } from 'date-fns';
+import { startOfDay } from 'date-fns';
 
 export class WorkoutService {
   static async getWorkoutSession(userId: string, date: Date) {

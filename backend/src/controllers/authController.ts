@@ -97,7 +97,7 @@ export class AuthController {
     }
   }
 
-  static async logout(req: AuthRequest, res: Response) {
+  static async logout(_req: AuthRequest, res: Response) {
     // With JWT, logout is handled client-side by removing the token
     // This endpoint exists for consistency and can be used for logging
     res.status(200).json({ message: 'Logged out successfully' });

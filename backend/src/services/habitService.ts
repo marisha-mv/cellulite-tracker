@@ -1,6 +1,6 @@
 import { prisma } from '../server';
 import { HabitCheckInData } from '../types';
-import { startOfDay, subDays } from 'date-fns';
+import { startOfDay } from 'date-fns';
 
 export class HabitService {
   static async getHabitCheckIn(userId: string, date: Date) {
