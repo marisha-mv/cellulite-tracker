@@ -36,13 +36,21 @@ const Button: React.FC<ButtonProps> = ({
     (disabled || loading) ? 'opacity-50 cursor-not-allowed' : ''
   } ${className}`;
 
+  const buttonProps = {
+    ...props,
+    onAnimationStart: undefined,
+    onDragStart: undefined,
+    onDragEnd: undefined,
+    onDrag: undefined,
+  };
+
   return (
     <motion.button
       className={combinedClassName}
       disabled={disabled || loading}
       whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
       whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
-      {...props}
+      {...buttonProps}
     >
       {loading ? (
         <>

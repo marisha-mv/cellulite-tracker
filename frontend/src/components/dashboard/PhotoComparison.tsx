@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X, Maximize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import { WeeklyProgress } from '../../types';
 import Card from '../shared/Card';
 import Modal from '../shared/Modal';

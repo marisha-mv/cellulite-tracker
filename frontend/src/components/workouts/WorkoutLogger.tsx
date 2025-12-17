@@ -38,6 +38,7 @@ const WorkoutLogger: React.FC<WorkoutLoggerProps> = ({
         exerciseName: name,
         sets: 3,
         reps: 12,
+        weight: undefined,
         completed: false,
       })),
       completed: false,
@@ -66,6 +67,7 @@ const WorkoutLogger: React.FC<WorkoutLoggerProps> = ({
           exerciseName: '',
           sets: 3,
           reps: 12,
+          weight: undefined,
           completed: false,
         },
       ],
@@ -94,9 +96,18 @@ const WorkoutLogger: React.FC<WorkoutLoggerProps> = ({
       return;
     }
 
+    // Ensure completed is always a boolean
+    const workoutToSave = {
+      ...workout,
+      exercises: workout.exercises.map((ex) => ({
+        ...ex,
+        completed: ex.completed ?? false,
+      })),
+    };
+
     setIsSaving(true);
     try {
-      await onSave(workout);
+      await onSave(workoutToSave);
     } finally {
       setIsSaving(false);
     }

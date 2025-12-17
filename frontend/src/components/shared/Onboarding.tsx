@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronRight, ChevronLeft, CheckSquare, Dumbbell, Camera, Sparkles } from 'lucide-react';
+import { ChevronRight, ChevronLeft, CheckSquare, Dumbbell, Camera, Sparkles } from 'lucide-react';
 import Modal from './Modal';
 import Button from './Button';
 

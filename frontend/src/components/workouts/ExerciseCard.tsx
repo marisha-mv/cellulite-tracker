@@ -7,7 +7,7 @@ interface Exercise {
   sets: number;
   reps: number;
   weight?: number;
-  completed: boolean;
+  completed?: boolean;
 }
 
 interface ExerciseCardProps {
@@ -38,7 +38,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
       className={`p-4 rounded-premium border-2 transition-all duration-200 ${
-        exercise.completed
+        exercise.completed === true
           ? 'border-success bg-success/5'
           : 'border-neutral-200 bg-white'
       }`}

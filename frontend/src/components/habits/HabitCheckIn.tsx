@@ -19,7 +19,7 @@ const HabitCheckIn: React.FC<HabitCheckInProps> = ({ date, onSave }) => {
   const [checkIn, setCheckIn] = useState<Partial<HabitCheckInType>>({});
   const [isSaving, setIsSaving] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
-  const [saveTimeout, setSaveTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [saveTimeout, setSaveTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
 
   // Load existing check-in data
@@ -88,21 +88,21 @@ const HabitCheckIn: React.FC<HabitCheckInProps> = ({ date, onSave }) => {
 
   const completion = calculateCompletionPercentage(checkIn as HabitCheckInType);
 
-  const categoryIcons = {
+  const categoryIcons: Record<string, JSX.Element> = {
     [HABIT_CATEGORIES.MORNING]: <Sunrise size={20} />,
     [HABIT_CATEGORIES.DAYTIME]: <Sun size={20} />,
     [HABIT_CATEGORIES.EVENING]: <Moon size={20} />,
     [HABIT_CATEGORIES.NUTRITION]: <UtensilsCrossed size={20} />,
   };
 
-  const categoryTitles = {
+  const categoryTitles: Record<string, string> = {
     [HABIT_CATEGORIES.MORNING]: 'Morning Routine',
     [HABIT_CATEGORIES.DAYTIME]: 'Throughout the Day',
     [HABIT_CATEGORIES.EVENING]: 'Evening Routine',
     [HABIT_CATEGORIES.NUTRITION]: 'Nutrition',
   };
 
-  const categoryColors = {
+  const categoryColors: Record<string, string> = {
     [HABIT_CATEGORIES.MORNING]: 'text-primary',
     [HABIT_CATEGORIES.DAYTIME]: 'text-accent',
     [HABIT_CATEGORIES.EVENING]: 'text-primary-dark',

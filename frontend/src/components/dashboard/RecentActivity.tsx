@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Card from '../shared/Card';
 import { CheckSquare, Dumbbell, Camera, Calendar } from 'lucide-react';
-import { format, formatDistanceToNow } from 'date-fns';
+import { formatDistanceToNow } from 'date-fns';
 import { HabitCheckIn, WorkoutSession, WeeklyProgress } from '../../types';
 
 interface RecentActivityProps {

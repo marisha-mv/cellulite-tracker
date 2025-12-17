@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Info } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Habit } from '../../utils/constants';
 
 interface HabitCardProps {

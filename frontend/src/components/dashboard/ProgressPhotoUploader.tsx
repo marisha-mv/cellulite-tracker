@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { motion } from 'framer-motion';
 import { Upload, X, Image as ImageIcon, Check } from 'lucide-react';
 import Card from '../shared/Card';
 import Button from '../shared/Button';
