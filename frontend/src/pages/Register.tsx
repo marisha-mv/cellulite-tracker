@@ -188,7 +188,7 @@ const Register: React.FC = () => {
               </Link>
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
