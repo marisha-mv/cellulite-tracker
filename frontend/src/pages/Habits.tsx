@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { format } from 'date-fns';
 import Layout from '../components/layout/Layout';
 import Card from '../components/shared/Card';
 import HabitCheckIn from '../components/habits/HabitCheckIn';
